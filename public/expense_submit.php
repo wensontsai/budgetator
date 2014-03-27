@@ -39,8 +39,10 @@ include_once 'includes/db.php';
 <body>
     <div class="container">
         <p><?php echo $message; ?>
-    </div>
+    <br><br>
+    <a href="/budgetator/public/#/dashboard">go back to dashboard</a>
 
+    </div>
     <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
