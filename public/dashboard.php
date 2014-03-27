@@ -63,7 +63,7 @@ include_once 'includes/db.php';
 <?php } else { ?>
 
     <div>
-        please log
+        please log in
 
 
     </div>
