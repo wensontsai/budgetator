@@ -1,0 +1,21 @@
+<h2>If you haven't already, please create an account.</h2>
+  <form action="adduser_submit.php" method="post" ng-submit="signup()">
+    <fieldset>
+      <p>
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" value="" maxlength="20" required/>
+      </p>
+      <p>
+      <label for="password">Password</label>
+      <input type="text" id="password" name="password" value="" maxlength="20" required/>
+      </p>
+      <p>
+      <input type="hidden" name="form_token" value="<?php echo $form_token; ?>" />
+       <button class="btn btn-sm" ng-click="signup()">create account</button>
+      </p>
+    </fieldset>
+  </form>
+  <h2>or else</h2>
+
+    <button class="btn btn-sm" ng-click="signin()">sign in here</button>
+
