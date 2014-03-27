@@ -17,7 +17,13 @@ include_once 'includes/db.php';
         </p>
         <p>
         <label for="expense_type">type</label>
-        <input type="text" id="expense_type" name="expense_type" value="" maxlength="50" />
+        <select  name="expense_type">
+            <option value="food">food</option>
+            <option value="clothing">clothing</option>
+            <option value="social">social</option>
+            <option value="unique">unique purchase</option>
+            <option value="travel">travel</option>
+        </select>
         </p>
         <p>
         <label for="expense_amount">amount</label>
@@ -25,8 +31,10 @@ include_once 'includes/db.php';
         </p>
         <p>
         <label for="necessary_expense">was this a truly necessary expense?</label>
-        <INPUT TYPE="radio" id="necessary_expense" name="necessary_expense" value="1">Yes
-        <INPUT TYPE="radio" id="necessary_expense" name="necessary_expense" value="0">No
+        <select name="necessary_expense">
+            <option id="necessary_expense" name="necessary_expense" value="1">Yes</option>
+            <option id="necessary_expense" name="necessary_expense" value="0">No</option>
+        </select>
         </p>
         <p>
         <button class="btn btn-sm">add expense</button>

@@ -26,6 +26,10 @@ var app = angular.module("app", ['ngRoute']).config(function($routeProvider) {
       controller: 'AddExpenseController'
     });
 
+    $routeProvider.when('/logoutsuccess', {
+      templateUrl: 'views/logoutsuccess.html'
+    });
+
 
     $routeProvider.otherwise({ redirectTo : '/signup' });
 });

@@ -29,8 +29,8 @@ include_once 'includes/db.php';
                 <td class="yo more">name</td>
                 <td class="yo more">type</td>
                 <td class="yo more">amount</td>
-                <td class="yo more">necessary (0=no)</td>
-                <td class="yo more">user ID</td>
+                <td class="yo more">necessary?</td>
+                <!-- <td class="yo more">user ID</td> -->
             </tr>
 
 <?php
@@ -42,9 +42,15 @@ include_once 'includes/db.php';
             echo "<tr>";
             echo "<td class='yo'>". $value->expense_name ."</td>";
             echo "<td class='yo'>". $value->expense_type ."</td>";
-            echo "<td class='yo'>". $value->expense_amount ."</td>";
-            echo "<td class='yo'>". $value->necessary_expense ."</td>";
-            echo "<td class='yo'>". $value->user_id ."</td>";
+            echo "<td class='yo'>$". $value->expense_amount ."</td>";
+            if($value->necessary_expense === '0'){
+                echo "<td class='yo'>". "no" ."</td>";
+                // echo "<td class='yo'>". $value->user_id ."</td>";
+            } else {
+                echo "<td class='yo'>". "yes" ."</td>";
+
+            }
+
             echo "</tr>";
         }
 ?>
@@ -57,7 +63,9 @@ include_once 'includes/db.php';
 <?php } else { ?>
 
     <div>
-        please log in
+        please log
+
+
     </div>
 
 <?php } ?>
