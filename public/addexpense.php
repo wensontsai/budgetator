@@ -27,7 +27,7 @@ include_once 'includes/db.php';
         </p>
         <p>
         <label for="expense_amount">amount $</label>
-        <input type="text" id="expense_amount" name="expense_amount" value="" maxlength="25" />
+        <input type="text" id="expense_amount" name="expense_amount" value="" maxlength="15" />
         </p>
         <p>
         <label for="necessary_expense">was this a truly necessary expense?</label>

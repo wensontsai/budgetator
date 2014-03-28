@@ -34,6 +34,11 @@ $form_token = $_SESSION['form_token'];
                 <ul class="nav navbar-nav">
                   <li><a class="nav_change" href="#dashboard">Dashboard</a></li>
                   <li><a class="nav_change" href="#addexpense">Add Expenses</a></li>
+
+                  <?php if ($_SESSION['user_id']){  ?>
+                    <li><a href="/budgetator/public/logout.php">Logout</a></li>
+                  <?php } ?>
+
                 <li id="update_message">
                     <?php if ($_SESSION['update_message']){  ?>
                         <?php echo $_SESSION['update_message'] ?><br>

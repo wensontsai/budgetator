@@ -59,7 +59,7 @@ include_once 'includes/db.php';
         </table>
     </div>
 <br>
-    <div><a href="/budgetator/public/logout.php">Log out</a></div>
+
 
 <?php } else { ?>
 
