@@ -9,3 +9,8 @@
 .more {
   font-weight: 900;
 }
+
+#update_message {
+  padding: 15px 0 0 50px;
+  color: orange;
+}

@@ -24,11 +24,20 @@ include_once 'includes/db.php';
         /*** execute the prepared statement ***/
         $stmt->execute();
 
-        $message = "new expense added successfully";
+        $_SESSION['update_message'] = "*** new expense added successfully !";
+
+        function Redirect($url, $user_id, $permanent = false)
+                    {
+                        header('Location: ' . $url . '?id=' . $user_id, true, $permanent ? 301 : 302);
+
+                        exit();
+                    }
+
+        Redirect('/budgetator/public/#/dashboard', $user_id, false);
 
 ?>
 
-<html>
+<!-- <html>
     <head>
         <title>expenses submit</title>
         <meta charset="utf-8">
@@ -45,4 +54,4 @@ include_once 'includes/db.php';
     </div>
     <script src="js/bootstrap.min.js"></script>
 </body>
-</html>
+</html> -->

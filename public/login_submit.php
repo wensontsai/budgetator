@@ -78,17 +78,17 @@ else
                 $_SESSION['user_id'] = $user_id;
 
                 /*** tell the user we are logged in ***/
-                $message = "You are now logged in <span id='user'>user id: " . $user_id . "</span><br><br><a href='/budgetator/public/#/dashboard'>see your dashboard now</a>";
+                $_SESSION['login_message'] = "Hello <span id='user'>user id: " . $user_id . "</span> !";
 
 
-                // function Redirect($url, $user_id, $permanent = false)
-                //     {
-                //         header('Location: ' . $url . '?id=' . $user_id, true, $permanent ? 301 : 302);
+                function Redirect($url, $user_id, $permanent = false)
+                    {
+                        header('Location: ' . $url . '?id=' . $user_id, true, $permanent ? 301 : 302);
 
-                //         exit();
-                //     }
+                        exit();
+                    }
 
-                // Redirect('/budgetator/public/#/dashboard', $user_id, false);
+                Redirect('/budgetator/public/#/dashboard', $user_id, false);
         }
 
 
@@ -103,7 +103,7 @@ else
 ?>
 
 
-<!DOCTYPE HTML>
+<!-- <!DOCTYPE HTML>
 <html ng-app="app">
 <head>
 <title>PHPRO Login</title>
@@ -123,5 +123,5 @@ else
       <script src="js/angular-route.js"></script>
       <script src="js/app.js"></script>
 </body>
-</html>
+</html> -->
 

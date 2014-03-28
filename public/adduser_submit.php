@@ -64,8 +64,20 @@ else
         /*** unset the form token session variable ***/
         unset( $_SESSION['form_token'] );
 
-        /*** if all is done, say thanks ***/
-        $message = 'New user added<br><br><a href="/budgetator/public/#/login">please log in here</a>';
+
+            /*** if all is done, say thanks ***/
+          $_SESSION['update_message'] = '*** New user added successfully !';
+
+                function Redirect($url, $user_id, $permanent = false)
+                    {
+                        header('Location: ' . $url . '?id=' . $user_id, true, $permanent ? 301 : 302);
+
+                        exit();
+                    }
+
+                Redirect('/budgetator/public/#/login', $user_id, false);
+
+
     }
     catch(Exception $e)
     {

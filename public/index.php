@@ -27,13 +27,18 @@ $form_token = $_SESSION['form_token'];
             <div class="container-fluid">
               <!-- Brand and toggle get grouped for better mobile display -->
               <div class="navbar-header">
-                <a class="navbar-brand" href="#">Budgetator</a>
+                <a class="navbar-brand nav_change" href="#">Budgetator</a>
               </div>
 
               <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                  <li><a href="#dashboard">Dashboard</a></li>
-                  <li><a href="#addexpense">Add Expenses</a></li>
+                  <li><a class="nav_change" href="#dashboard">Dashboard</a></li>
+                  <li><a class="nav_change" href="#addexpense">Add Expenses</a></li>
+                <li id="update_message">
+                    <?php if ($_SESSION['update_message']){  ?>
+                        <?php echo $_SESSION['update_message'] ?><br>
+                    <?php } unset($_SESSION['update_message']); ?>
+                </li>
 
                 </ul>
               </div><!-- /.navbar-collapse -->
@@ -59,8 +64,13 @@ $form_token = $_SESSION['form_token'];
 <script>
 
   var user_id = "<?php echo $_SESSION['user_id'] ?>";
+    $(document).ready(function(){
 
-  $('#user_id').html(user_id);
+        $('.nav_change').click(function(){
+          $('#update_message').html('');
+        });
+
+    });
 
 </script>
 

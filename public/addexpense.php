@@ -26,7 +26,7 @@ include_once 'includes/db.php';
         </select>
         </p>
         <p>
-        <label for="expense_amount">amount</label>
+        <label for="expense_amount">amount $</label>
         <input type="text" id="expense_amount" name="expense_amount" value="" maxlength="25" />
         </p>
         <p>
@@ -50,5 +50,6 @@ include_once 'includes/db.php';
 </div>
 
 <?php } ?>
+
 
 

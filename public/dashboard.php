@@ -20,7 +20,8 @@ include_once 'includes/db.php';
 
 <?php if (isset($_SESSION['user_id']) || !empty($_SESSION['user_id'])){  ?>
     <div id="summary">
-        Hello <span id='user'>user id: <?php echo $_SESSION['user_id'] ?></span> !<br>
+
+        <br><?php echo $_SESSION['login_message'] ?><br>
         Here is what your budget is looking like.
         <br><br>
         <h4>expenses:</h4>
@@ -64,8 +65,6 @@ include_once 'includes/db.php';
 
     <div>
         please log in
-
-
     </div>
 
 <?php } ?>
