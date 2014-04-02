@@ -79,7 +79,7 @@ else
 
                 /*** tell the user we are logged in ***/
                 $_SESSION['login_message'] = "Hello <span id='user'>user id: " . $user_id . "</span> !";
-
+                $_SESSION['update_message'] = "*** you've logged in successfully!";
 
                 function Redirect($url, $user_id, $permanent = false)
                     {

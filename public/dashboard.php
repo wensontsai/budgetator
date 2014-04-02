@@ -2,13 +2,7 @@
 
 session_start();
 
-include_once 'includes/db.php';
-
-    $stmt_expenses = $dbh->prepare("SELECT * FROM expenses WHERE user_id = :user_id");
-    $stmt_expenses->bindParam(':user_id', $_SESSION['user_id'], PDO::PARAM_INT);
-    $stmt_expenses->execute();
-    $expenses = $stmt_expenses->fetchAll(PDO::FETCH_OBJ);
-    // print_r($expenses);
+require('functions/D3_functions.php');
 
 ?>
 
@@ -89,6 +83,8 @@ include_once 'includes/db.php';
 
                 echo "</tr>";
             }
+
+
 ?>
 
             </table>
@@ -165,7 +161,13 @@ include_once 'includes/db.php';
             <h4>expense data visualization</h4>
             <table>
                 <tr>
-                    <td>percentages spent viz</td>
+                    <!-- <div id="D3_piechart">
+                        <button class="randomize btn btn-sm">March</button>
+                        <button class="btn btn-sm" id="april">April</button>
+
+                    </div> -->
+                   <!--  <svg id="svg_donut" width="600" height="400"></svg> -->
+                    <svg id="svg2"></svg>
                 </tr>
             </table>
         </div>
@@ -173,6 +175,11 @@ include_once 'includes/db.php';
 
     </div>
 <br>
+<script>
+// runD3();
+// runD50();
+runD74();
+</script>
 
 
 <?php } else { ?>
