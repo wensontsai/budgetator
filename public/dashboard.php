@@ -25,68 +25,67 @@ require('functions/D3_functions.php');
                     <!-- <td class="yo more">user ID</td> -->
                 </tr>
 
-<?php
-        // echo "<pre>";
-        // echo var_dump($expenses);
-        // echo "</pre>";
+                <?php
+                // echo "<pre>";
+                // echo var_dump($expenses);
+                // echo "</pre>";
 
 
-            // $type_array = array('food','clothing','social','unique','travel');
+                    // $type_array = array('food','clothing','social','unique','travel');
 
-            // foreach($type_array as $typer){
-            //     echo "$" .$typer. "_count = 0";
-            //     echo "$" .$typer. "_type = []";
+                    // foreach($type_array as $typer){
+                    //     echo "$" .$typer. "_count = 0";
+                    //     echo "$" .$typer. "_type = []";
 
-            // }
+                    // }
 
-            $food_count = 0;
-            $clothing_count = 0;
-            $social_count = 0;
-            $unique_count = 0;
-            $travel_count = 0;
+                    $food_count = 0;
+                    $clothing_count = 0;
+                    $social_count = 0;
+                    $unique_count = 0;
+                    $travel_count = 0;
 
-            $expense_array = [];
+                    $expense_array = [];
 
-            $food_type =[];
-            $clothing_type =[];
-            $social_type =[];
-            $unique_type =[];
-            $travel_type =[];
+                    $food_type =[];
+                    $clothing_type =[];
+                    $social_type =[];
+                    $unique_type =[];
+                    $travel_type =[];
 
 
-            foreach($expenses as $value){
+                    foreach($expenses as $value){
 
-                $expense_array[] = $value->expense_amount;
-                        if($value->expense_type === "clothing"){
-                            $clothing_count++;
-                        } else if ($value->expense_type === "food"){
-                            $food_count++;
-                        } else if ($value->expense_type === "social"){
-                            $social_count++;
-                        } else if ($value->expense_type === "unique"){
-                            $unique_count++;
-                        } else if ($value->expense_type === "travel"){
-                            $travel_count++;
+                        $expense_array[] = $value->expense_amount;
+                                if($value->expense_type === "clothing"){
+                                    $clothing_count++;
+                                } else if ($value->expense_type === "food"){
+                                    $food_count++;
+                                } else if ($value->expense_type === "social"){
+                                    $social_count++;
+                                } else if ($value->expense_type === "unique"){
+                                    $unique_count++;
+                                } else if ($value->expense_type === "travel"){
+                                    $travel_count++;
+                                }
+
+                        echo "<tr>";
+                        echo "<td class='yo'>". $value->expense_name ."</td>";
+                        echo "<td class='yo'>". $value->expense_type ."</td>";
+                        echo "<td class='yo'>$". $value->expense_amount ."</td>";
+                        if($value->necessary_expense === '0'){
+                            echo "<td class='yo'>". "no" ."</td>";
+                            // echo "<td class='yo'>". $value->user_id ."</td>";
+                        } else {
+                            echo "<td class='yo'>". "yes" ."</td>";
+
                         }
 
-                echo "<tr>";
-                echo "<td class='yo'>". $value->expense_name ."</td>";
-                echo "<td class='yo'>". $value->expense_type ."</td>";
-                echo "<td class='yo'>$". $value->expense_amount ."</td>";
-                if($value->necessary_expense === '0'){
-                    echo "<td class='yo'>". "no" ."</td>";
-                    // echo "<td class='yo'>". $value->user_id ."</td>";
-                } else {
-                    echo "<td class='yo'>". "yes" ."</td>";
-
-                }
-
-                echo "</tr>";
-            }
+                        echo "</tr>";
+                    }
 
 
-?>
-
+                ?>
             </table>
 <br><br><br>
 
@@ -104,31 +103,31 @@ require('functions/D3_functions.php');
                     <td class="yo">food</td>
                     <td class="yo"></td>
                     <td class="yo"><?php echo $food_total ?></td>
-                    <td class="yo"><?php echo $food_total/array_sum($expense_array) *100?>%</td>
+                    <td class="yo"><?php echo @($food_total/array_sum($expense_array) *100) ?>%</td>
                 </tr>
                 <tr>
                     <td class="yo">clothing</td>
                     <td class="yo"></td>
                     <td class="yo"><?php echo $clothing_total ?></td>
-                    <td class="yo"><?php echo $clothing_total/array_sum($expense_array) *100?>%</td>
+                    <td class="yo"><?php echo @($clothing_total/array_sum($expense_array) *100) ?>%</td>
                 </tr>
                 <tr>
                     <td class="yo">social</td>
                     <td class="yo"></td>
                     <td class="yo"><?php echo $social_total ?></td>
-                    <td class="yo"><?php echo $social_total/array_sum($expense_array) *100?>%</td>
+                    <td class="yo"><?php echo @($social_total/array_sum($expense_array) *100) ?>%</td>
                 </tr>
                 <tr>
                     <td class="yo">unique</td>
                     <td class="yo"></td>
                     <td class="yo"><?php echo $unique_total ?></td>
-                    <td class="yo"><?php echo $unique_total/array_sum($expense_array) *100?>%</td>
+                    <td class="yo"><?php echo @($unique_total/array_sum($expense_array) *100) ?>%</td>
                 </tr>
                 <tr>
                     <td class="yo">travel</td>
                     <td class="yo"></td>
                     <td class="yo"><?php echo $travel_total ?></td>
-                    <td class="yo"><?php echo $travel_total/array_sum($expense_array) *100?>%</td>
+                    <td class="yo"><?php echo @($travel_total/array_sum($expense_array) *100) ?>%</td>
                 </tr>
                     <!-- <td class="yo more">user ID</td> -->
             </table>

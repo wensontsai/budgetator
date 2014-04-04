@@ -19,6 +19,8 @@
 $food_total = 0;
 $clothing_total = 0;
 $unique_total = 0;
+$social_total = 0;
+$travel_total = 0;
 
 foreach($expenses_graph as $array) {
 

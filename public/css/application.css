@@ -53,3 +53,9 @@ polyline{
   right: 10px;
   top: 10px;
 }
+
+#expense_list {
+  height:150px;
+  overflow:hidden;
+  overflow-y:auto;
+}
