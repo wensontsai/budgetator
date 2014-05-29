@@ -25,6 +25,7 @@ require('functions/D3_functions.php');
                     <!-- <td class="yo more">user ID</td> -->
                 </tr>
 
+
                 <?php
                 // echo "<pre>";
                 // echo var_dump($expenses);
@@ -87,6 +88,10 @@ require('functions/D3_functions.php');
 
                 ?>
             </table>
+
+
+
+
 <br><br><br>
 
             <h4>expenses breakdown:</h4>

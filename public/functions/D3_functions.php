@@ -8,6 +8,7 @@
     $expenses = $stmt_expenses->fetchAll(PDO::FETCH_OBJ);
     // print_r($expenses);
 
+
     // sql query to get labels and values for D3 graph
     $stmt_expenses_graph = $dbh->prepare("SELECT expense_type, expense_amount FROM expenses WHERE user_id = :user_id ");
     $stmt_expenses_graph->bindParam(':user_id', $_SESSION['user_id'], PDO::PARAM_INT);

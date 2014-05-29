@@ -20,6 +20,7 @@ require('functions/D3_functions.php');
     <meta charset="utf-8">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/application.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 
 </head>
 
@@ -67,8 +68,12 @@ require('functions/D3_functions.php');
       <script src="js/bootstrap.min.js"></script>
       <script src="js/angular.min.js"></script>
       <script src="js/angular-route.js"></script>
+      <script src="js/custom.js"></script>
       <script src="js/app.js"></script>
       <script src="http://d3js.org/d3.v3.min.js"></script>
+
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 
 <script>
 
